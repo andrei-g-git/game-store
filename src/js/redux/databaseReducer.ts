@@ -2,14 +2,14 @@ import * as actionTypes from './actionTypes';
 import { GameCardData } from '../interfaces/Data';
 
 const initialState = {
-    featured: [],
+    popular: [],
     newGames: [],
     free: []
 }
 
 const databaseReducer = (
     state: {
-        featured: GameCardData[],
+        popular: GameCardData[],
         newGames: GameCardData[],
         free: GameCardData[]
     } = initialState,
@@ -19,10 +19,10 @@ const databaseReducer = (
     }
 ) => {
     switch(action.type){
-        case actionTypes.FEATURED_GAMES_LOADED:
+        case actionTypes.POPULAR_GAMES_LOADED:
             return{
                 ...state,
-                featured: action.payload
+                popular: action.payload
             }
         case actionTypes.NEW_GAMES_LOADED:
             return{
@@ -38,3 +38,5 @@ const databaseReducer = (
             return state;                    
     }
 }
+
+export {databaseReducer};

@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const featuredGamesLoaded = (featuredGames) => {
+export const popularGamesLoaded = (popularGames) => {
     return {
-        type: actionTypes.FEATURED_GAMES_LOADED,
-        payload: featuredGames
+        type: actionTypes.POPULAR_GAMES_LOADED,
+        payload: popularGames
     }
 }
 export const newGamesLoaded = (newGames) => {

@@ -1,7 +1,7 @@
 import { createStore, combineReducers, compose } from 'redux';
-import { databaseReducer } from './databaseReducer';
+import { databaseReducer } from './databaseReducer.js';
 
-export function makeStore(){
+function makeStore(){
     const allReducers = combineReducers({
         databaseReducer: databaseReducer
     });
@@ -18,3 +18,5 @@ export function makeStore(){
         )
     )
 }
+
+export {makeStore};
