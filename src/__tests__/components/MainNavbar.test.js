@@ -8,6 +8,6 @@ configure({ adapter: new Adapter() });
 describe("MainNavbar", () =>{
     it("mounts the component without errors", () => {
         const wrapper = shallow(<MainNavbar />);
-        expect(wrapper.find(`[data-testid="main-nav-bar"]`).lenght).toBe(2);
+        expect(wrapper.find(`[data-testid="main-nav-bar"]`).length).toBe(1);
     });
 });

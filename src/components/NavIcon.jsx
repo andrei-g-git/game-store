@@ -8,7 +8,7 @@ function NavIcon(props) {
             href={props.path}
         >
             <img className={"d-none d-md-block main-nav-icon" + props.extraClass}
-                src="https://cdn3.iconfinder.com/data/icons/block/32/search-512.png"//{props.image} 
+                src={props.image} 
                 alt="n/a"
             />
         </a>
