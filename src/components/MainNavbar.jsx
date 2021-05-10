@@ -11,7 +11,10 @@ import '../css/MainNavbar.scss';
 
 function MainNavbar() {
     return (
-        <nav id="main-nav-bar" className="container">
+        <nav className="container"
+            id="main-nav-bar" 
+            data-testid="main-nav-bar"
+        >
             
             <div className="row" style={{height: "100%"}}>
                 <div className="col-sm-8 nav-items">    
