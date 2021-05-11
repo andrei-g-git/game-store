@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/Featured.scss'; //should be carousel.css or something like that
+import '../css/FeaturedGamesCarousel.scss'; //should be carousel.css or something like that
 
 function CarouselPopular(props) {
 
@@ -48,7 +48,7 @@ function CarouselPopular(props) {
                                             <div className="btn btn-success"
                                                 type="button"
                                             >
-                                                Buy now!
+                                                Buy!
                                             </div>
                                             {
                                                 item.discount_percent > 0 ? 
@@ -64,38 +64,6 @@ function CarouselPopular(props) {
                                         </div> 
                                 }
 
-
-                                {/* <div className="buy-group">
-                                    {
-                                        item.is_free ?                                           
-
-                                            <div className="btn btn-warning"
-                                                type="button"
-                                            >
-                                                Play it!
-                                            </div>
-                                        :
-                                            <div className="btn btn-success"
-                                                type="button"
-                                            >
-                                                Buy now!
-                                            </div>
-                                    }
-                                    {
-                                        item.discount_percent > 0 ? //assume it's not free
-                                            <p className="strikethrough-price">
-                                                ${item.price}
-                                            </p>
-                                        :
-                                            item.is_free ?
-                                                <div>Free</div>  
-                                            :
-                                                <div></div>  
-                                    }
-                                    <h5>
-                                        ${ calculateDiscountedPrice(item.price, item.discount_percent).toFixed(2) }
-                                    </h5>
-                                </div> */}
                             </div>                            
                         </div>
                     </Carousel.Item>

@@ -17,7 +17,7 @@ describe("NavIcon", () => {
 
     it("has the right route path", () => {
         const wrapper = shallow(<NavIcon path="/whatever" />);
-        expect(wrapper.find("a").prop("href")).toBe("/whatever");     //basically I can't test anything if the component imports a LOCAL image
+        expect(wrapper.find("a").prop("href")).toBe("/whatever");     //why the hell am i even testing this, of course the prop will be correct, I just gave it the damn thing
     });
 
     it("mounts the component without errors", () => {

@@ -1,0 +1,18 @@
+.featured-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-group{
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.strikethrough-price{
+    text-decoration: line-through;
+}
+
+.featured-card-header-image{
+    //forgot what I was going to do with this
+}
