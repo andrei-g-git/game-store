@@ -1,15 +1,13 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../js/redux/actions';
 import { withRouter } from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Carousel from 'react-bootstrap/Carousel';
-
 import { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
+import '../css/Featured.scss';
 
 const $ = require('jquery');
 
@@ -43,110 +41,6 @@ function Featured(props) {
 
 
     return (
-        /*         <div id="whatever" 
-                    className="carousel slide" 
-                    data-ride="carousel" 
-                    style={{backgroundColor: "gray"}}
-                >
-        
-        
-                    <ol className="carousel indicators">
-        
-                        <li data-target="whatever" data-slide-to="0" className="active"></li>
-        
-                        {
-                            
-                            props.popular.map(item => 
-                                
-                                <li data-target="whatever" data-slide-to={item.index} key={item.id}></li>    
-                            )
-                        }
-         
-                    </ol>
-        
-        
-        
-                    <div className="carousel-inner">
-                        
-        
-        
-                        <div className="carousel-item active"> 
-                            <div className="container">
-                            <div className="card" style={{width: "3rem;"}}>
-                                <img className="card-img-top d-block w-100"
-                                    src={firstItem.header_image}
-                                    alt="n/a"
-                                    onClick={ () => console.log("was clicked")}
-                                />
-                                <div className="card-body">
-                                    <h4 className="card-title">
-                                        {firstItem.title}
-                                    </h4>
-                                    <p className="card-text">
-                                        {firstItem.description}
-                                    </p>
-                                </div>
-                            </div>
-                            </div> 
-                        </div>    
-        
-                        {
-        
-                            props.popular.map(item => 
-                                <div className="carousel-item" 
-                                    key={item.id}
-                                > 
-                                    <div className="container">
-                                    <div className="card" style={{width: "3rem;"}}>
-                                        <img className="card-img-top d-block w-100"
-                                            src={item.header_image}
-                                            alt="n/a"
-                                            onClick={ () => console.log("was clicked")}
-                                        />
-                                        <div className="card-body">
-                                            <h4 className="card-title">
-                                                {item.title}
-                                            </h4>
-                                            <p className="card-text">
-                                                {item.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    </div> 
-                                </div>    
-                            )
-                        }
-                    </div>
-        
-        
-        
-                    <a class="carousel-control-prev" href="#whatever" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#whatever" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-        
-        
-        
-        
-                    <br/>
-        
-                    {
-                        props.newGames.map(item => 
-                            <h3 key={item.id}> {item.title} </h3>    
-                        )
-                    }
-                    
-        
-        
-                </div> */
-
-
-
-
 
         <Carousel activeIndex={index} 
             onSelect={handleSelect}
@@ -154,20 +48,36 @@ function Featured(props) {
         >
             {props.popular.map((item, i) => {
                 return (
-                    <Carousel.Item>
+                    <Carousel.Item key={item.id}>
                         <div className="card">
                             <img
                                 className="card-img-top d-block w-100"
                                 src={item.header_image}
                                 alt="n/a"
                             />
-                            <div className="card-body">
+                            <div className="card-body featured-card">
                                 <h4 className="card-title">
                                     {item.title}
                                 </h4>
-                                <p className="card-text">
-                                    {item.description}
-                                </p>
+                                <div className="buy-group">
+                                    <div className="btn btn-success"
+                                        type="button"
+                                    >
+                                        Buy now!
+                                    </div>
+
+                                    {
+                                        item.discount_percent > 0 ?
+                                            <p className="strikethrough-price">
+                                                ${item.price}
+                                            </p>
+                                        :
+                                            <div></div>    
+                                    }
+                                    <h5>
+                                        ${ calculateDiscountedPrice(item.price, item.discount_percent).toFixed(2) }
+                                    </h5>
+                                </div>
                             </div>                            
                         </div>
                     </Carousel.Item>
@@ -175,14 +85,6 @@ function Featured(props) {
             })}
 
         </Carousel>
-
-
-
-
-
-
-
-
 
     )
 }
