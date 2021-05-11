@@ -8,22 +8,17 @@ import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
 import '../css/Featured.scss';
+import FeaturedGamesCarousel from '../components/FeaturedGamesCarousel';
 
 const $ = require('jquery');
 
 function Featured(props) {
 
 
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0); //will use for now, problem with redux, the reducer returns an array of GameCardData objects...
     const handleSelect = (selectedIndex, event) => {
         setIndex(selectedIndex);
     };
-
-
-
-
-
-
 
     useEffect(() => {
         $.when(
@@ -34,15 +29,16 @@ function Featured(props) {
 
     }, [])
 
-    let carouselClass = "carousel-item active";
-
-    let firstItem = {}
-    if (props.popular.length) firstItem = props.popular[0];
-
-
     return (
+            <div>
+            <FeaturedGamesCarousel games={props.popular} />
 
-        <Carousel activeIndex={index} 
+            <FeaturedGamesCarousel games={props.newGames} />
+            
+            <FeaturedGamesCarousel games={props.free} />
+            </div>
+
+/*         <Carousel activeIndex={index} // I HAVE TO USE THIS STATE SHIT FOR NOW, THE uiReducer RETURNS ARRAYS OF GAMES INSTEAD OF NUMBERS FOR SOME REASON...
             onSelect={handleSelect}
             indicators={true}
         >
@@ -84,7 +80,7 @@ function Featured(props) {
                 )
             })}
 
-        </Carousel>
+        </Carousel> */
 
     )
 }
@@ -93,7 +89,10 @@ const mapStateToProps = (state) => {
     return {
         popular: state.databaseReducer.popular,
         newGames: state.databaseReducer.newGames,
-        free: state.databaseReducer.free
+        free: state.databaseReducer.free,
+        popularSelectIndex: state.uiReducer.popularSelectIndex,
+        newSelectIndex: state.uiReducer.newSelectIndex,
+        freeSelectIndex: state.uiReducer.freeSelectIndex        
     }
 }
 
@@ -107,30 +106,18 @@ const mapDispatchToProps = (dispatch) => {
         },
         fetchFree: (free) => {
             dispatch(actions.freeGamesLoaded(free))
-        }
+        },
+        handleSelectPopular: (index => {
+            dispatch(actions.popularCarouselIndexChanged(index))
+        }),
+        handleSelectNew: (index => {
+            dispatch(actions.newCarouselIndexChanged(index))
+        }),
+        handleSelectFree: (index => {
+            dispatch(actions.freeCarouselIndexChanged(index))
+        }),                
     }
 }
-
-
-
-const data = [
-    {
-        image: 'https://steamcdn-a.akamaihd.net/steam/apps/546560/header.jpg',
-        caption: "Caption",
-        description: "Description Here"
-    },
-    {
-        image: 'https://steamcdn-a.akamaihd.net/steam/apps/1091500/header.jpg',
-        caption: "Caption",
-        description: "Description Here"
-    },
-    {
-        image: 'https://steamcdn-a.akamaihd.net/steam/apps/1097150/header.jpg',
-        caption: "Caption",
-        description: "Description Here"
-    }
-]
-
 
 
 export default /* withRouter( */connect(mapStateToProps, mapDispatchToProps)(Featured)/* ) */;
