@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
-import FeaturedGamesCarousel from '../components/FeaturedGamesCarousel';
+import FeaturedGamesSwiper from '../components/FeaturedGamesSwiper';
 import '../css/Featured.scss';
 
 const $ = require('jquery');
@@ -26,11 +26,11 @@ function Featured(props) {
     return (
         <div id="featured-games">
             <label>Popular:</label>
-            <FeaturedGamesCarousel games={props.popular} />
+            <FeaturedGamesSwiper games={props.popular} />
             <label>New releases:</label>
-            <FeaturedGamesCarousel games={props.newGames} />
+            <FeaturedGamesSwiper games={props.newGames} />
             <label>Free games:</label>
-            <FeaturedGamesCarousel games={props.free} />
+            <FeaturedGamesSwiper games={props.free} />
         </div>
     )
 }

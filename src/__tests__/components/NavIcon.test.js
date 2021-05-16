@@ -20,7 +20,7 @@ describe("NavIcon", () => {
         expect(wrapper.find("a").prop("href")).toBe("/whatever");     //why the hell am i even testing this, of course the prop will be correct, I just gave it the damn thing
     });
 
-    it("mounts the component without errors", () => {
+    it("mounts the component without errors", () => { //this is brittle
         const wrapper = shallow(<NavIcon image="https://ducks/duck.jpg" path="/ducks"/>);
         expect(wrapper.find(`[data-test="main-nav-anchor"]`).length).toBe(1);
     });

@@ -1,11 +1,14 @@
 .featured-card{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    //width: 360px;
+
 }
 
 .buy-group{
     display: flex;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
     align-items: center;
 }
 
@@ -14,5 +17,5 @@
 }
 
 .featured-card-header-image{
-    //forgot what I was going to do with this
+    width: 360px;
 }

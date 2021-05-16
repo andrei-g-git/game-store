@@ -1,5 +1,6 @@
-#featured-games{
-    display: inline-flex;
-    flex-direction: column;
-    row-gap: 1rem;
+#featured-games{ //this makes the 2nd row take up more than the screen in height and the cards are all showing
+    // display: flex;
+    // flex-direction: column;
+    // row-gap: 1rem;
+    // margin-top: 3rem;
 }

@@ -2,16 +2,34 @@
 
 #main-nav-bar{
     display: flex;
+    align-items: center;
     width: 100%;
     height: $main-navbar-height;
-    background-color:darkorange;
+    background-color: $nav-etc-background-color;
+    position: relative;
 }
 
-.nav-items{
+//.nav-items{
+.nav-icons{
     display: flex;
-    //justify-content: end;
+    position: absolute;
+    right: 0;
+    margin: $nav-items-lateral-margin;
 }
 
-.logo{
-    justify-self: center;
+#nav-link-home{ //has to have unique ids to override bootstrap, 100pts vs 10 for classes
+    color: white; 
+}
+
+#dropdown-browse{
+    color: white; 
+}
+
+.main-nav-icon{
+    height: $main-navbar-height * $main-navbar-icon-height-multiplier;
+    //position: absolute;
+}
+
+#logo{
+    right: 50%;
 }

@@ -1,15 +1,11 @@
 @import './Variables.scss';
 
 .main-nav-anchor{
-    //width: 100%;
-    //height: $main-navbar-height * $main-navbar-icon-height-multiplier;
     display: flex;
     align-items: center;
 }
 
 .main-nav-icon{
-    //margin-right: 2rem;
-    //width: 100%;
     height: $main-navbar-height * $main-navbar-icon-height-multiplier;
     justify-self: end;
 }
