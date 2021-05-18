@@ -2,6 +2,7 @@ import Main from './components/Main';
 import { Provider } from 'react-redux';
 import { makeStore } from './js/redux/MakeStore';
 import { BrowserRouter } from 'react-router-dom';
+import './css/App.scss';
 
 const store = makeStore();
 

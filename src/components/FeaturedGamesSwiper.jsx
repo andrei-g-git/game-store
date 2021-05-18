@@ -7,6 +7,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 
+import '../css/CustomSwiperStyles.scss';
 
 import '../css/FeaturedGamesCarousel.scss'; //should be carousel.css or something like that
 //import 'bootstrap/dist/css/bootstrap.min.css'; //still using this
@@ -55,20 +56,20 @@ function CarouselPopular(props) {
                                 {
                                     item.is_free ?
                                         <div className="buy-group">
-                                            <div className="btn btn-warning"
+                                            {/* <div className="btn btn-warning"
                                                 type="button"
                                             >
-                                                Play it!
-                                            </div>
+                                                Play!
+                                            </div> */}
                                             <div>Free!</div>
                                         </div>    
                                     :
                                         <div className="buy-group">
-                                            <div className="btn btn-success"
+                                            {/* <div className="btn btn-success"
                                                 type="button"
                                             >
                                                 Buy!
-                                            </div>
+                                            </div> */}
                                             {
                                                 item.discount_percent > 0 ? 
                                                     <p className="strikethrough-price">
@@ -77,7 +78,7 @@ function CarouselPopular(props) {
                                                 :
                                                     <div></div>  
                                             }
-                                            <h6>
+                                            <h6 className="actual-price">
                                                 ${ calculateDiscountedPrice(item.price, item.discount_percent).toFixed(2) }
                                             </h6>
                                         </div> 

@@ -25,11 +25,11 @@ function Featured(props) {
 
     return (
         <div id="featured-games">
-            <label>Popular:</label>
+            <label className="featured-label">Popular:</label>
             <FeaturedGamesSwiper games={props.popular} />
-            <label>New releases:</label>
+            <label className="featured-label">New releases:</label>
             <FeaturedGamesSwiper games={props.newGames} />
-            <label>Free games:</label>
+            <label className="featured-label">Free games:</label>
             <FeaturedGamesSwiper games={props.free} />
         </div>
     )

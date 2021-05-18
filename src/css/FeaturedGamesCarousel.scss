@@ -1,8 +1,11 @@
+@import './Variables.scss';
+
 .featured-card{
     display: flex;
     justify-content: space-between;
     align-items: center;
     //width: 360px;
+    height: $featured-card-height;
 
 }
 
@@ -14,8 +17,23 @@
 
 .strikethrough-price{
     text-decoration: line-through;
+    margin-bottom: 0;
+}
+
+.actual-price{
+    margin-bottom: 0;
 }
 
 .featured-card-header-image{
     width: 360px;
+    //width: 100%;
+    
+}
+
+//override
+.card{
+    border: none;
+    background-color: $secndary-background-color;
+    color: white;
+    //min-width: 360px;
 }
