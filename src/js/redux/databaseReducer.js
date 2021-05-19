@@ -16,7 +16,8 @@ var actionTypes = require("./actionTypes");
 var initialState = {
     popular: [],
     newGames: [],
-    free: []
+    free: [],
+    clickedGame: null
 };
 var databaseReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
@@ -27,6 +28,8 @@ var databaseReducer = function (state, action) {
             return __assign(__assign({}, state), { newGames: action.payload });
         case actionTypes.FREE_GAMES_LOADED:
             return __assign(__assign({}, state), { free: action.payload });
+        case actionTypes.GAME_LOADED:
+            return __assign(__assign({}, state), { clickedGame: action.payload });
         default:
             return state;
     }

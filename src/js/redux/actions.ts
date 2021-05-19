@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 import { ReduxAction } from '../interfaces/Redux';
 import { GameData } from '../interfaces/Data';
 
-export const popularGamesLoaded = (popularGames: GameData): ReduxAction => {
+export const popularGamesLoaded = (popularGames: GameData): ReduxAction => { //these seem to be loading game objects, not games arrays... although it still works, no idea why
     return {
         type: actionTypes.POPULAR_GAMES_LOADED,
         payload: popularGames
@@ -39,5 +39,12 @@ export const freeCarouselIndexChanged = (index: number): ReduxAction => {
     return {
         type: actionTypes.FREE_CAROUSEL_INDEX_CHANGED,
         payload: index
+    }
+}
+
+export const gameLoaded = (game: {}/* GameData */): ReduxAction => {
+    return {
+        type: actionTypes.GAME_LOADED,
+        payload: game
     }
 }

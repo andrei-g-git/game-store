@@ -3,6 +3,7 @@ import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
 //
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -11,6 +12,8 @@ import '../css/CustomSwiperStyles.scss';
 
 import '../css/FeaturedGamesCarousel.scss'; //should be carousel.css or something like that
 //import 'bootstrap/dist/css/bootstrap.min.css'; //still using this
+
+//import { formatWithHyphen } from '../js/utils/format'; //no, I would have to match this against whatever is in the link and it only works if I GET all the games in the database, which is fine when there are like 20 games but not fine if there are 20k
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -41,7 +44,10 @@ function CarouselPopular(props) {
             {props.games.map((item) => {
                 return (
                     <SwiperSlide key={item.id}>
-                        <div className="card">
+                        <Link className="card" //should be separate component
+                            role="button"
+                            to={"/games/" + item.id}
+                        >
                             <img
                                 className="card-img-top d-block w-100 featured-card-header-image"
                                 src={item.header_image}
@@ -51,25 +57,13 @@ function CarouselPopular(props) {
                                 <h6 className="card-title">
                                     {item.title}
                                 </h6>
-
-
                                 {
                                     item.is_free ?
                                         <div className="buy-group">
-                                            {/* <div className="btn btn-warning"
-                                                type="button"
-                                            >
-                                                Play!
-                                            </div> */}
                                             <div>Free!</div>
                                         </div>    
                                     :
                                         <div className="buy-group">
-                                            {/* <div className="btn btn-success"
-                                                type="button"
-                                            >
-                                                Buy!
-                                            </div> */}
                                             {
                                                 item.discount_percent > 0 ? 
                                                     <p className="strikethrough-price">
@@ -85,7 +79,7 @@ function CarouselPopular(props) {
                                 }
 
                             </div>                            
-                        </div>
+                        </Link>
                     </SwiperSlide>
                 )
             })}

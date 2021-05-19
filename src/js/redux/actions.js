@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.freeCarouselIndexChanged = exports.newCarouselIndexChanged = exports.popularCarouselIndexChanged = exports.freeGamesLoaded = exports.newGamesLoaded = exports.popularGamesLoaded = void 0;
+exports.gameLoaded = exports.freeCarouselIndexChanged = exports.newCarouselIndexChanged = exports.popularCarouselIndexChanged = exports.freeGamesLoaded = exports.newGamesLoaded = exports.popularGamesLoaded = void 0;
 var actionTypes = require("./actionTypes");
 var popularGamesLoaded = function (popularGames) {
     return {
@@ -44,3 +44,10 @@ var freeCarouselIndexChanged = function (index) {
     };
 };
 exports.freeCarouselIndexChanged = freeCarouselIndexChanged;
+var gameLoaded = function (game /* GameData */) {
+    return {
+        type: actionTypes.GAME_LOADED,
+        payload: game
+    };
+};
+exports.gameLoaded = gameLoaded;

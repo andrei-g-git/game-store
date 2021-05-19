@@ -1,17 +1,20 @@
 import * as actionTypes from './actionTypes';
-import { GameCardData } from '../interfaces/Data';
+import { GameCardData, GameData } from '../interfaces/Data';
 
 const initialState = {
     popular: [],
     newGames: [],
-    free: []
+    free: [],
+    clickedGame: null
 }
 
 const databaseReducer = (
     state: {
         popular: GameCardData[],
         newGames: GameCardData[],
-        free: GameCardData[]
+        free: GameCardData[],
+        //clickedGame: GameData | null
+        clickedGame: {} | null
     } = initialState,
     action: {
         type: string,
@@ -34,6 +37,11 @@ const databaseReducer = (
                 ...state,
                 free: action.payload
             }    
+        case actionTypes.GAME_LOADED:
+            return{
+                ...state,
+                clickedGame: action.payload
+            }
         default: 
             return state;                    
     }
