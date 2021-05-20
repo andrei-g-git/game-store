@@ -53,7 +53,7 @@ function CarouselPopular(props) {
                                 src={item.header_image}
                                 alt="n/a"
                             />
-                            <div className="card-body featured-card">
+                            <div className="card-body featured-card-body">
                                 <h6 className="card-title">
                                     {item.title}
                                 </h6>

@@ -1,12 +1,18 @@
 @import './Variables.scss';
 
-.featured-card{
+.featured-card-body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //width: 360px;
     height: $featured-card-body-height;
+}
 
+.card{
+    text-decoration: none;
+
+    &:hover{
+        color:white;
+    }
 }
 
 .buy-group{
@@ -25,9 +31,8 @@
 }
 
 .featured-card-header-image{
-    width: 360px;
     //width: 100%;
-    
+
 }
 
 //override

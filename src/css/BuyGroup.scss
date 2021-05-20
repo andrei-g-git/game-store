@@ -1,0 +1,22 @@
+@import './Variables.scss';
+
+.buy-group{
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+    color: $standard-text-color;
+}
+
+.strikethrough-price{
+    text-decoration: line-through;
+    margin-bottom: 0;
+}
+
+.actual-price{
+    margin-bottom: 0;
+}
+
+.price-layout-override{
+    display: flex;
+    flex-direction: column;
+}
