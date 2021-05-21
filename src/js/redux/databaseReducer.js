@@ -17,7 +17,8 @@ var initialState = {
     popular: [],
     newGames: [],
     free: [],
-    clickedGame: null
+    clickedGame: null,
+    pics: []
 };
 var databaseReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
@@ -30,6 +31,8 @@ var databaseReducer = function (state, action) {
             return __assign(__assign({}, state), { free: action.payload });
         case actionTypes.GAME_LOADED:
             return __assign(__assign({}, state), { clickedGame: action.payload });
+        case actionTypes.PICS_LOADED:
+            return __assign(__assign({}, state), { pics: action.payload });
         default:
             return state;
     }

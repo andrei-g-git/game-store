@@ -6,22 +6,44 @@ import { Col, Row, Container, Button } from 'react-bootstrap';
 import BuyGroup from '../components/BuyGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/GamePage.scss';
+ 
+import PicSwiper from '../components/PicSwiper';
 
 const $ = require('jquery');
 
 function GamePage(props) {
 
     useEffect(() => {
-        $.ajax({
-            type: "POST",
-            url: "/api/games",
-            data: { id: props.gameId },
-            success: (response) => { 
-                console.log(response);
-                props.loadGame(response[0]); //SELECT * FROM table WHERE   returns an array
-            },
-            dataType: "json"
-        })
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/api/games",
+        //     data: { id: props.gameId },
+        //     success: (response) => { 
+        //         console.log(response);
+        //         props.loadGame(response[0]); //SELECT * FROM table WHERE   returns an array
+        //     },
+        //     dataType: "json"
+        // })
+        $.when(
+            $.ajax({
+                type: "POST",
+                url: "/api/games",
+                data: { id: props.gameId },
+                success: response => {
+                    console.log(response);
+                    props.loadGame(response[0]); //SELECT * FROM table WHERE   returns an array                    
+                }    
+            }),
+            $.ajax({
+                type: "POST",
+                url: "/api/games/pics",
+                data: { id: props.gameId },
+                success: response => {
+                    console.log(response);
+                    props.loadPics(response[0]);                    
+                }
+            })
+        );        
     }, []);
 
     return (
@@ -37,11 +59,21 @@ function GamePage(props) {
                 </Row>
                 <Row>
                     <Col sm="12" md="8">
-                        <img //className="col"//"col-sm-12 col-md-8"
+{/*                         <img //className="col"//"col-sm-12 col-md-8"
                             id="game-page-pic"
-                            src={ props.clickedGame.header_image }
+                            //src={ props.clickedGame.header_image }
+                            src={ props.pics.pic_1 }
                             alt="n/a"
+                        /> */}
+
+                        <PicSwiper 
+                            pics={[
+                                props.pics.pic_1,
+                                props.pics.pic_2,
+                                props.pics.pic_3
+                            ]} 
                         />
+
                     </Col>
                     <Col sm="12" md="4">
                         <Row>
@@ -90,7 +122,8 @@ function GamePage(props) {
 
 const mapStateToProps = (state) => {
     return{
-        clickedGame: state.databaseReducer.clickedGame
+        clickedGame: state.databaseReducer.clickedGame,
+        pics: state.databaseReducer.pics
     }
 }
 
@@ -98,6 +131,9 @@ const mapDispatchToProps = (dispatch) => {
     return{
         loadGame: (game) => {
             dispatch(actions.gameLoaded(game))
+        },
+        loadPics: (pics) => {
+            dispatch(actions.picsLoaded(pics))
         }
     }
 }

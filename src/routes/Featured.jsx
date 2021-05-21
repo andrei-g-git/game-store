@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import * as actions from '../js/redux/actions';
 import { withRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import { calculateDiscountedPrice } from '../js/utils/DerivedCalculations.js';
 import FeaturedGamesSwiper from '../components/FeaturedGamesSwiper';
 import '../css/Featured.scss';
+
+
 
 const $ = require('jquery');
 

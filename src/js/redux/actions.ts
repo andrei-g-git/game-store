@@ -48,3 +48,10 @@ export const gameLoaded = (game: {}/* GameData */): ReduxAction => {
         payload: game
     }
 }
+
+export const picsLoaded = (pics: string[]): ReduxAction => {
+    return{
+        type: actionTypes.PICS_LOADED,
+        payload: pics
+    }
+}

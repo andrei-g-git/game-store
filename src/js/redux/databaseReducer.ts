@@ -5,7 +5,8 @@ const initialState = {
     popular: [],
     newGames: [],
     free: [],
-    clickedGame: null
+    clickedGame: null,
+    pics: []
 }
 
 const databaseReducer = (
@@ -14,7 +15,8 @@ const databaseReducer = (
         newGames: GameCardData[],
         free: GameCardData[],
         //clickedGame: GameData | null
-        clickedGame: {} | null
+        clickedGame: {} | null,
+        pics: string[]
     } = initialState,
     action: {
         type: string,
@@ -41,6 +43,11 @@ const databaseReducer = (
             return{
                 ...state,
                 clickedGame: action.payload
+            }
+        case actionTypes.PICS_LOADED:
+            return{
+                ...state,
+                pics: action.payload
             }
         default: 
             return state;                    
