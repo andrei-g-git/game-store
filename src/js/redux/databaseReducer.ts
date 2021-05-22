@@ -6,7 +6,9 @@ const initialState = {
     newGames: [],
     free: [],
     clickedGame: null,
-    pics: []
+    pics: [],
+    searchQuery: "",
+    searchedGames: []
 }
 
 const databaseReducer = (
@@ -16,7 +18,9 @@ const databaseReducer = (
         free: GameCardData[],
         //clickedGame: GameData | null
         clickedGame: {} | null,
-        pics: string[]
+        pics: string[],
+        searchQuery: string,
+        searchedGames: GameCardData[]
     } = initialState,
     action: {
         type: string,
@@ -48,6 +52,16 @@ const databaseReducer = (
             return{
                 ...state,
                 pics: action.payload
+            }
+        case actionTypes.SEARCH_QUERIED:
+            return{
+                ...state,
+                searchQuery: action.payload
+            }
+        case actionTypes.SEARCHED_GAMES_LOADED:
+            return{
+                ...state,
+                searchedGames: action.payload
             }
         default: 
             return state;                    

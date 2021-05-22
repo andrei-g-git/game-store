@@ -18,7 +18,9 @@ var initialState = {
     newGames: [],
     free: [],
     clickedGame: null,
-    pics: []
+    pics: [],
+    searchQuery: "",
+    searchedGames: []
 };
 var databaseReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
@@ -33,6 +35,10 @@ var databaseReducer = function (state, action) {
             return __assign(__assign({}, state), { clickedGame: action.payload });
         case actionTypes.PICS_LOADED:
             return __assign(__assign({}, state), { pics: action.payload });
+        case actionTypes.SEARCH_QUERIED:
+            return __assign(__assign({}, state), { searchQuery: action.payload });
+        case actionTypes.SEARCHED_GAMES_LOADED:
+            return __assign(__assign({}, state), { searchedGames: action.payload });
         default:
             return state;
     }

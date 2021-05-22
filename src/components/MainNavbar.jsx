@@ -5,6 +5,7 @@ import searchIcon from '../assets/img/search-icon-png-9973.png';
 import cartIcon  from '../assets/img/shopping-cart-icon-29083.png';
 import userIcon from '../assets/img/user.png';
 import logoIcon from '../assets/img/gameStore2.png';
+import SearchBar from './SearchBar';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -43,12 +44,14 @@ function MainNavbar() {
                     </NavDropdown>
 
                     <Nav.Link data-test="main-nav-anchor" className="main-nav-anchor" href="/">
-                        <img className="main-nav-icon"
+                        <img className="d-none d-md-block main-nav-icon"
                             id="logo"
                             src={logoIcon} 
                             alt="n/a"
                         />
                     </Nav.Link> 
+
+                    <SearchBar />
 
                     <div class="nav-icons">
                         <NavIcon 

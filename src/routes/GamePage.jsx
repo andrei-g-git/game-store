@@ -14,16 +14,6 @@ const $ = require('jquery');
 function GamePage(props) {
 
     useEffect(() => {
-        // $.ajax({
-        //     type: "POST",
-        //     url: "/api/games",
-        //     data: { id: props.gameId },
-        //     success: (response) => { 
-        //         console.log(response);
-        //         props.loadGame(response[0]); //SELECT * FROM table WHERE   returns an array
-        //     },
-        //     dataType: "json"
-        // })
         $.when(
             $.ajax({
                 type: "POST",
@@ -59,12 +49,6 @@ function GamePage(props) {
                 </Row>
                 <Row>
                     <Col sm="12" md="8">
-{/*                         <img //className="col"//"col-sm-12 col-md-8"
-                            id="game-page-pic"
-                            //src={ props.clickedGame.header_image }
-                            src={ props.pics.pic_1 }
-                            alt="n/a"
-                        /> */}
 
                         <PicSwiper 
                             pics={[
@@ -92,12 +76,15 @@ function GamePage(props) {
                             </Col>
 
                             <Col>
-                                <input type="button" value="Buy"/>
+                                <input type="button" value="Buy"/> {/* <<<<<<<<<<<<<< */}
                                 <h6>
-                                    Release date: { props.clickedGame.release }
+                                    Release date: { props.clickedGame.release_date }
                                 </h6>
                                 <h6>
                                     Genre: { props.clickedGame.genre }
+                                </h6>
+                                <h6>
+                                    User score: {props.clickedGame.rating_percent + "%"}
                                 </h6>
                             </Col>
                         </Row>

@@ -4,6 +4,7 @@ import MainNavbar from './MainNavbar';
 import { Switch, Route } from 'react-router-dom';
 import Featured from '../routes/Featured';
 import GamePage from '../routes/GamePage';
+import SearchResult from '../routes/SearchResult';
 import Footer from './Footer';
 import '../css/Main.scss';
 
@@ -31,6 +32,10 @@ export default class Main extends Component {
                             />
                         }}
                     />
+
+                    <Route path="/search-result">
+                        <SearchResult />
+                    </Route>
                 </Switch>
 
                 <Footer></Footer>

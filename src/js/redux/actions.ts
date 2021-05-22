@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import { ReduxAction } from '../interfaces/Redux';
-import { GameData } from '../interfaces/Data';
+import { GameData, GameCardData } from '../interfaces/Data';
 
 export const popularGamesLoaded = (popularGames: GameData): ReduxAction => { //these seem to be loading game objects, not games arrays... although it still works, no idea why
     return {
@@ -8,7 +8,7 @@ export const popularGamesLoaded = (popularGames: GameData): ReduxAction => { //t
         payload: popularGames
     }
 }
-export const newGamesLoaded = (newGames: GameData): ReduxAction => {
+export const newGamesLoaded = (newGames: GameData): ReduxAction => { //should be GameData[] ?
     return {
         type: actionTypes.NEW_GAMES_LOADED,
         payload: newGames
@@ -50,8 +50,22 @@ export const gameLoaded = (game: {}/* GameData */): ReduxAction => {
 }
 
 export const picsLoaded = (pics: string[]): ReduxAction => {
-    return{
+    return {
         type: actionTypes.PICS_LOADED,
         payload: pics
+    }
+}
+
+export const searchQueried = (searchQuery: string): ReduxAction => {
+    return {
+        type: actionTypes.SEARCH_QUERIED,
+        payload: searchQuery
+    }
+}
+
+export const searchedGamesLoaded = (searchedGames: GameCardData[]): ReduxAction => {
+    return {
+        type: actionTypes.SEARCHED_GAMES_LOADED,
+        payload: searchedGames
     }
 }

@@ -10,3 +10,7 @@ export const GAME_LOADED = "GAME_LOADED";
 
 export const PICS_LOADED = "PICS_LOADED";
 
+export const SEARCH_QUERIED = "SEARCH_QUERIED";
+
+export const SEARCHED_GAMES_LOADED = "SEARCHED_GAMES_LOADED";
+
