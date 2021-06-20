@@ -53,7 +53,7 @@ function MainNavbar() {
 
                     <SearchBar />
 
-                    <div class="nav-icons">
+                    <div className="nav-icons">
                         <NavIcon 
                                 image={cartIcon} 
                                 path="/shopping-cart"

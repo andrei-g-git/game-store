@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchFree: (free) => {
             dispatch(actions.freeGamesLoaded(free))
         },
-        handleSelectPopular: (index => {
+        handleSelectPopular: (index => { // ### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ####
             dispatch(actions.popularCarouselIndexChanged(index))
         }),
         handleSelectNew: (index => {

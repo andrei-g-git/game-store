@@ -5,9 +5,11 @@
     justify-content: space-between;
     align-items: center;
     height: $featured-card-body-height;
+
+    background-color: $secndary-background-color;;
 }
 
-.card{
+.card{ //there's one at the bottom of the sheet
     text-decoration: none;
 
     &:hover{

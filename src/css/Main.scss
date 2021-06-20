@@ -1,6 +1,24 @@
 @import './Variables.scss';
 
 #main{
+    width: 100%;
     background-color: $main-background-color;
-    min-height: 100vh;
+    //min-height: 100vh;
+}
+
+.flex-row-layout{
+    display: flex;
+}
+.grid-row-layout{
+    display: grid;
+    grid-template-columns: 600px 1200px 300px;//$sidebar-width 1200px $sidebar-width;
+}
+
+.scrollable-wrapper{
+    margin: 0 $sidebar-width;
+}
+
+.right{
+    left: auto;
+    right: 0;
 }

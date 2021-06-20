@@ -13,8 +13,6 @@ import '../css/CustomSwiperStyles.scss';
 import '../css/FeaturedGamesCard.scss'; //should be carousel.css or something like that
 //import 'bootstrap/dist/css/bootstrap.min.css'; //still using this
 
-//import { formatWithHyphen } from '../js/utils/format'; //no, I would have to match this against whatever is in the link and it only works if I GET all the games in the database, which is fine when there are like 20 games but not fine if there are 20k
-
 SwiperCore.use([Navigation, Pagination]);
 
 function CarouselPopular(props) {

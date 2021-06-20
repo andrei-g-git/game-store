@@ -1,0 +1,18 @@
+@import './Variables.scss';
+
+.navbar-wrapper{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: $sidebar-width;
+    height: 100vh;
+    top: 0;
+    background-color: gray;
+}
+
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
+}
