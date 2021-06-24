@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../js/redux/actions';
 import FeaturedGamesSwiper from '../components/FeaturedGamesSwiper';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import headerVideo from '../assets/video/bg-hero-video.mp4';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/Home.scss';
 
 const $ = require('jquery');
 
@@ -33,7 +34,7 @@ function Home(props) {
                 </video>            
             </div>
 
-            <div className="row">
+            <div className="swiper-wrapper row">
                 <label className="home-label">New releases</label>
                 <FeaturedGamesSwiper games={props.newGames} />
             </div>

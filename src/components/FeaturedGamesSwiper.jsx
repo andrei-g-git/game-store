@@ -19,6 +19,11 @@ function CarouselPopular(props) {
 
 
     return (
+        <div className="test-delete"
+            style={{
+                width: "84%"
+            }}
+        >
         <Swiper 
             spaceBetween={20}
             slidesPerView={3}
@@ -83,6 +88,7 @@ function CarouselPopular(props) {
             })}
 
         </Swiper>
+        </div>
     )
 }
 

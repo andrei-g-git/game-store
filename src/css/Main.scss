@@ -9,16 +9,22 @@
 .flex-row-layout{
     display: flex;
 }
-.grid-row-layout{
-    display: grid;
-    grid-template-columns: 600px 1200px 300px;//$sidebar-width 1200px $sidebar-width;
-}
+// .grid-row-layout{
+//     display: grid;
+//     grid-template-columns: 600px 1200px 300px;//$sidebar-width 1200px $sidebar-width;
+// }
 
 .scrollable-wrapper{
-    margin: 0 $sidebar-width;
+    margin: 0 15%;//$sidebar-width;
 }
 
 .right{
     left: auto;
     right: 0;
+}
+
+@media screen and (max-width: 768px){
+    .scrollable-wrapper{
+        margin: 0;
+    }
 }

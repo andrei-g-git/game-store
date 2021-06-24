@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function SearchBar(props) {
+function SearchBar(props) { 
     return (
-        <form id="search-form"
+        <form id="search-form" //so this thing somehow POSTS the query to the server ... ?
             onSubmit={curryHandleSubmit(props)}
         >
             <input id="search-field"

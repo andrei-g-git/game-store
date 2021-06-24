@@ -6,6 +6,7 @@ import Home from '../routes/Home';
 import GamePage from '../routes/GamePage';
 import SearchResult from '../routes/SearchResult';
 import Footer from './Footer';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Main.scss';
 
 export default class Main extends Component {
