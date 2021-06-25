@@ -1,0 +1,11 @@
+@import './Variables.scss';
+
+.standard-button{
+    width: 100%;
+}
+.sign-in-color{
+    color: white;
+}
+.sign-up-color{
+    color: $main-cta-color;    
+}

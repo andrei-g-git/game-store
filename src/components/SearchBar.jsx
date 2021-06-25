@@ -2,21 +2,31 @@ import React from 'react';
 import * as actions from '../js/redux/actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import searchIcon from '../assets/img/search-1.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/SearchBar.scss';
 
 function SearchBar(props) { 
     return (
-        <form id="search-form" //so this thing somehow POSTS the query to the server ... ?
+        <form className="search-form" //so this thing somehow POSTS the query to the server ... ?
             onSubmit={curryHandleSubmit(props)}
         >
-            <input id="search-field"
+            <input className="search-field"
+                id="search-field"
                 type="search"
                 placeholder="Search..."
                 name="search"
             />
-            <button type="submit">
+            {/* <button className="btn btn-primary" 
+                type="submit"
+            >
                 <i className="fa fa-search"></i>
-            </button>
+            </button> */}
+            <input className="search-icon"
+                type="image"
+                src={searchIcon}
+                alt="submit"
+            />
         </form>
     )
 }

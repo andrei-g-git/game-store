@@ -1,0 +1,15 @@
+@import './Variables.scss';
+
+.search-form{
+    position: relative;
+    width: 90%;
+}
+.search-field{
+    //width: 90%;//$sidebar-width - 4%;
+    width: 100%;
+}
+.search-icon{
+    position: absolute;
+    right: 1px;
+    height: 100%;
+}

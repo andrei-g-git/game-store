@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import SignInOrUp from './SignInOrUp';
 import logoIcon from '../assets/img/gameStore2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/SideNavbar.scss';
@@ -22,12 +23,23 @@ function SideNavbar(props) { //the layout prop should be removed since both side
             <div className="vertical-link-container-wrapper"> {/* for pete's sake, all because flex doesn't play nice with fixed positions */}
                 <div className="vertical-link-container">
 
-                    <div>Browse games {'>'}</div>
-                    <div>Deals{'        >'}</div>
+                    <div className="nav-link">Browse games {'>'}</div>
+                    <div className="nav-link">Deals{'        >'}</div>
                     <div className="nav-divider" />
-                    <div>about</div>
-                    <div>contact</div>                    
+                    <div className="nav-link">about</div>
+                    <div className="nav-link">contact</div>                    
                 </div>
+            </div>
+
+            <div className="lower-buttons-wrapper">
+                <SignInOrUp name="Sign In" 
+                    redirectPath="/authentication"
+                    colorClass="sign-in-color"
+                />
+                <SignInOrUp name="Sign Up" 
+                    redirectPath="/account-creation"
+                    colorClass="sign-up-color"
+                />                
             </div>
 
         </div>

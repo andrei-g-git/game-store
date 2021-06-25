@@ -5,11 +5,11 @@
     // flex-direction: column;
     // align-items: center;
     position: fixed; // absolute/fixed positioning messes with flex-box
-    min-width: 200px;
-    width: 15%;//$sidebar-width;
+    min-width: $sidebar-min-width;
+    width: $sidebar-width;
     height: 100vh;
     top: 0;
-    background-color: gray;
+    background-color: rgb(35, 35, 35);
 }
 
 .left{
@@ -18,7 +18,19 @@
 .right{
     right: 0;
 }
+.searchbar-wrapper{
+    margin-top: 20px;
+}
+.lower-buttons-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 
+    height: 60%; //this isn't 60% of the screen and if the height is low enough the buttons will be cut off
+    padding: 10%;
+    gap: 10px;
+}
 .logo-wrapper, .searchbar-wrapper, .vertical-link-container-wrapper{
     display: flex;
     justify-content: center;
@@ -27,7 +39,11 @@
     display: flex;
     flex-direction: column;
     width: 80%;
+    margin-top: 20px;
 }
 .nav-divider{
     border: 1px solid white;
+}
+.nav-link{
+    color: white;
 }
