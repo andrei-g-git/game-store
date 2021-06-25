@@ -1,0 +1,30 @@
+@import './Variables.scss';
+
+.spotlight-card{
+    position: relative;
+}
+.spotlight-image{
+    width: 90%; //of a bootstrap column
+    margin-left: 5%; 
+}
+.spotlight-price-group{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    right: 20px;
+    top: 30%;
+    width: 10rem;
+    //border: 1px solid red;
+}
+.spotlight-price{
+    color: white;
+}
+
+@media screen and (max-width: $bootstrap-sm){
+    .spotlight-image{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

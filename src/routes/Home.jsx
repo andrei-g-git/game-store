@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../js/redux/actions';
 import FeaturedGamesSwiper from '../components/FeaturedGamesSwiper';
-import BigCard from '../components/BigCard';
+import SpotlightCard from '../components/SpotlightCard';
 import headerVideo from '../assets/video/bg-hero-video.mp4';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.scss';
@@ -40,14 +40,14 @@ function Home(props) {
                 <FeaturedGamesSwiper games={props.newGames} />
             </div>
 
-            <div className="big-card-group row">
-                <div className="col-sm-12 col-md-6">
-                    <BigCard id={40} 
+            <div className="spotlight-wrapper row">
+                <div className="single-spotlight-wrapper col-sm-12 col-md-6 pt-5">
+                    <SpotlightCard id={40} 
                         imageUrl="https://cdn.akamai.steamstatic.com/steam/spotlights/1c4e156f329b743fd9bd9e8d/spotlight_image_english.jpg?t=1623965077" //so on steam spotlight and marketing images are in their own api tables too
                     />
                 </div>
-                <div className="col-sm-12 col-md-6">
-                    <BigCard id={41} 
+                <div className="single-spotlight-wrapper col-sm-12 col-md-6 pt-5">
+                    <SpotlightCard id={41} 
                         imageUrl="https://cdn.akamai.steamstatic.com/steam/marketing/4528256959408042268//images/english.jpg"
                     />
                 </div>

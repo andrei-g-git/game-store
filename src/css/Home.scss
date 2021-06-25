@@ -1,4 +1,22 @@
+@import './Variables.scss';
+
+.header-video{
+    padding-left: 0;
+    padding-right: 0;      
+}
 .swiper-wrapper{
     display: flex;
     justify-content: center;
+}
+.spotlight-wrapper{
+    //margin: 40px 0;
+}
+
+@media screen and (max-width: $bootstrap-sm){
+    .single-spotlight-wrapper{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;        
+    }
 }
