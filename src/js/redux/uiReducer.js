@@ -16,7 +16,8 @@ var actionTypes = require("./actionTypes");
 var initialState = {
     popularSelectIndex: 0,
     newSelectIndex: 0,
-    freeSelectIndex: 0
+    freeSelectIndex: 0,
+    mobileSearchToggled: false
 };
 var uiReducer = function (state, action) {
     if (state === void 0) { state = initialState; }
@@ -27,6 +28,8 @@ var uiReducer = function (state, action) {
             return __assign(__assign({}, state), { newSelectIndex: action.payload });
         case actionTypes.FREE_GAMES_LOADED:
             return __assign(__assign({}, state), { freeSelectIndex: action.payload });
+        case actionTypes.MOBILE_SEARCH_TOGGLED:
+            return __assign(__assign({}, state), { mobileSearchToggled: action.payload });
         default:
             return state;
     }

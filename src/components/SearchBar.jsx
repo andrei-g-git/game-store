@@ -17,11 +17,6 @@ function SearchBar(props) {
                 placeholder="Search..."
                 name="search"
             />
-            {/* <button className="btn btn-primary" 
-                type="submit"
-            >
-                <i className="fa fa-search"></i>
-            </button> */}
             <input className="search-icon"
                 type="image"
                 src={searchIcon}

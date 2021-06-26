@@ -4,14 +4,16 @@ import { ReduxAction } from '../interfaces/Redux';
 const initialState = {
     popularSelectIndex: 0,
     newSelectIndex: 0,
-    freeSelectIndex: 0
+    freeSelectIndex: 0,
+    mobileSearchToggled: false
 }
 
 const uiReducer = (
     state: {
         popularSelectIndex: number,
         newSelectIndex: number,
-        freeSelectIndex: number
+        freeSelectIndex: number,
+        mobileSearchToggled: boolean
     } = initialState,
     action: ReduxAction
 ) => {
@@ -31,6 +33,11 @@ const uiReducer = (
                 ...state,
                 freeSelectIndex: action.payload
             }  
+        case actionTypes.MOBILE_SEARCH_TOGGLED:
+            return{
+                ...state,
+                mobileSearchToggled: action.payload
+            }
         default:
             return state                         
     }

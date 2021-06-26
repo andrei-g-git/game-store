@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.searchedGamesLoaded = exports.searchQueried = exports.picsLoaded = exports.gameLoaded = exports.freeCarouselIndexChanged = exports.newCarouselIndexChanged = exports.popularCarouselIndexChanged = exports.freeGamesLoaded = exports.newGamesLoaded = exports.popularGamesLoaded = void 0;
+exports.mobileSearchToggled = exports.searchedGamesLoaded = exports.searchQueried = exports.picsLoaded = exports.gameLoaded = exports.freeCarouselIndexChanged = exports.newCarouselIndexChanged = exports.popularCarouselIndexChanged = exports.freeGamesLoaded = exports.newGamesLoaded = exports.popularGamesLoaded = void 0;
 var actionTypes = require("./actionTypes");
 var popularGamesLoaded = function (popularGames) {
     return {
@@ -72,3 +72,10 @@ var searchedGamesLoaded = function (searchedGames) {
     };
 };
 exports.searchedGamesLoaded = searchedGamesLoaded;
+var mobileSearchToggled = function (clicked) {
+    return {
+        type: actionTypes.MOBILE_SEARCH_TOGGLED,
+        payload: clicked
+    };
+};
+exports.mobileSearchToggled = mobileSearchToggled;

@@ -69,3 +69,10 @@ export const searchedGamesLoaded = (searchedGames: GameCardData[]): ReduxAction 
         payload: searchedGames
     }
 }
+
+export const mobileSearchToggled = (clicked: boolean): ReduxAction => {
+    return{
+        type: actionTypes.MOBILE_SEARCH_TOGGLED,
+        payload: clicked
+    }
+}
