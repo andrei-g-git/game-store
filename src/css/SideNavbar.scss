@@ -9,7 +9,7 @@
     width: $sidebar-width;
     height: 100vh;
     top: 0;
-    background-color: rgb(35, 35, 35);
+    background-color: $nav-etc-background-color
 }
 
 .left{
@@ -42,8 +42,16 @@
     margin-top: 20px;
 }
 .nav-divider{
-    border: 1px solid white;
+    border: 1px solid $sidebar-text-color;
+    margin: 10px 0;
 }
-.nav-link{
+
+.nav-link, .navigation-dropdown a { //mind the a
+    color: $sidebar-text-color;
+}
+.nav-link:hover, .navigation-dropdown a:hover { //mind the a
     color: white;
+}
+.navigation-dropdown-item{
+    color: $sidebar-text-color;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import MainNavbar from './MainNavbar';
 import SideNavbar from './SideNavbar';
+import TopNavbar from './TopNavbar';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../routes/Home';
 import GamePage from '../routes/GamePage';
@@ -39,6 +40,8 @@ export default class Main extends Component {
                 </div>
 
                 <SideNavbar layout="right"/> {/* test delete */}
+
+                <TopNavbar />
 
                 <Footer></Footer>
 

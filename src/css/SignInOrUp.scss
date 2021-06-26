@@ -2,10 +2,14 @@
 
 .standard-button{
     width: 100%;
+    border: none;
+    border-radius: $standard-border-radius;
 }
 .sign-in-color{
-    color: white;
+    background-color: white;
+    color: $sidebar-text-color;
 }
 .sign-up-color{
-    color: $main-cta-color;    
+    background-color: $main-cta-color;
+    color: white;    
 }
