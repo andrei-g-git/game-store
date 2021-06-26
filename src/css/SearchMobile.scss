@@ -2,9 +2,22 @@
     height: 60px;//100%;
 }
 
-.display-none{
+.icon-display-none/* , .form-display-none */{
     display: none;
 }
-.display-block{
+.icon-display-block/* , .form-display-block */{
     display: block;
+}
+
+.form-transition-expand{
+    width: 100%;
+    transition: all 0.5s ease-in-out;    
+}
+.form-transition-contract{
+    width: 0;
+    transition: all 0.5s ease-in-out;     
+}
+
+.mobile-search-field{
+    width: 100%;
 }
