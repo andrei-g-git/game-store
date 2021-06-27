@@ -6,10 +6,18 @@
     border-radius: $standard-border-radius;
 }
 .sign-in-color{
-    background-color: white;
+    background-color: $nav-etc-background-color;//white;
     color: $sidebar-text-color;
+    border: 1px solid $sidebar-text-color;
 }
 .sign-up-color{
     background-color: $main-cta-color;
     color: white;    
+}
+.sign-in-color:hover{
+    color: white;
+    border-color: white;
+}
+.sign-up-color:hover{
+    background-color: $main-cta-color-highlight;
 }

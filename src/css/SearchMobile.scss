@@ -1,23 +1,38 @@
+
 .mobile-search-icon{
     height: 60px;//100%;
+    position: absolute;
+    right: 0px;
+    top: 0;
 }
 
-.icon-display-none/* , .form-display-none */{
+.icon-display-none{
     display: none;
 }
-.icon-display-block/* , .form-display-block */{
+.icon-display-block{
     display: block;
 }
 
+.mobile-search-form{
+    position: fixed; //takes it out of the flex layout, otherwise it's padding offsets other elements to the left
+    top: 10px;
+    right: 10px;
+}
 .form-transition-expand{
-    width: 100%;
-    transition: all 0.5s ease-in-out;    
+    //width: 100%;
+    padding-left: 0;
+    transition: /* all */ padding-left 0.5s ease-in-out;    
 }
 .form-transition-contract{
-    width: 0;
-    transition: all 0.5s ease-in-out;     
+    //width: 0;
+    padding-left: 100%;
+    transition: /* all */ padding-left  0.5s ease-in-out;     
 }
 
 .mobile-search-field{
     width: 100%;
+}
+
+.mobile-search-button{
+    height: 60px;
 }
